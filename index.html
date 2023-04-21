@@ -265,13 +265,13 @@
       </section>
       <section id="contact">
         <h1>Contact</h1>
-        <form action="#">
+        <form onsubmit="Validation()">
           <label for="name">Name:</label>
-          <input type="text" id="name" name="name" />
+          <input type="text" id="name" name="name"  required>
           <label for="email">Email:</label>
-          <input type="email" id="email" name="email" />
+          <input type="email" id="email" name="email" required>
           <label for="message">Message:</label>
-          <textarea id="message" name="message"></textarea>
+          <textarea id="message" name="message" required></textarea>
           <input type="submit" value="Send" />
         </form>
       </section>
@@ -279,8 +279,7 @@
     </main>
     <div class="uparrow">
     <a href="#" id ="arrow" >
-    <i class="fa fa-arrow-up" style="font-size:24px;color:black;"></i>
-    </a>
+    <i class="fa fa-arrow-up" style="font-size:24px;color:black;"></i></a>
     </div>
     <footer>
       <p>&copy; nikhil krishna</p>
@@ -304,7 +303,42 @@
       </div>
     </footer>
     <script type="text/javascript">
-    
+    function Validation(){
+    let EmailInput=document.getElementById("email").value;
+    if (!isValidEmail(EmailInput)){
+    alert("Please enter a valid email ! ");
+    }
+    function isValidEmail(email){
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+    }
+    }
     </script>
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = trim($_POST["name"]);
+    $email = trim($_POST["email"]);
+    $message = trim($_POST["message"]);
+    
+    if (empty($name) || empty($email) || empty($message)) {
+    echo "All fields are required";
+    exit();
+    }
+    
+    $to = "nikhilkrishnak8@gmail.com";
+    $subject = "New message from $name";
+    $body = "Name: $name\nEmail: $email\n\n$message";
+    $headers = "From: $email";
+    
+    if (mail($to, $subject, $body, $headers)) {
+    echo "Email sent successfully";
+    } else {
+    echo "Error sending email";
+    }
+    } else {
+    echo "Access denied";
+    }
+    ?>
+    
   </body>
 </html>
