@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+   
+    * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    }
+    
+  html{
+  scroll-behavior:smooth;
+  }
+    body {
+    font-family: sans-serif;
+    line-height: 1.5;
+    }
+    
+    header {
+    padding: 1rem;
+    backdrop-filter:blur(10px);
+    }
+    
+    nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    transition: all 0.3s ease-in-out;
+    }
+    
+    nav li {
+    margin-right: 1rem;
+    }
+    
+    nav a {
+    color: #000000;
+    font-size:bold;
+    transition: all 0.3s ease-in-out;
+    }
+    
+    nav a:hover {
+    transform: translateY(-3px);
+    }
+    
+    main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align:center;
+    }
+    
+    section {
+    margin-bottom: 2rem;
+    transition: all 0.5s ease-in-out;
+    opacity: 0; 
+    animation: intro 1s ease forwards; 
+    
+    
+    }
+    
+    section:hover {
+    transform: translateY(-5px);
+    }
+    
+    section h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease-in-out;
+    }
+    
+    section ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 1rem;
+    transition: all 0.3s ease-in-out;
+    }
+    
+    section li {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    transition: all 0.3s ease-in-out;
+    }
+    
+    section li img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+    }
+    
+    section li h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease-in-out;
+    }
+    
+    section li:hover {
+    transform: translateY(-3px);
+    }
+    
+    form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease-in-out;
+    }
+    
+    form input,
+    form textarea {
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    background-color:transparent;
+    text-decoration:none;
+    border:none;
+    border-bottom: 2px solid black;
+    transition: all 0.3s ease-in-out;
+    }
+    form input:hover,form input:focus,
+    form textarea:hover,form textarea:focus{
+     text-decoration:none;
+     border:transparent;
+     border-bottom: 2px solid black;
+    }
+    
+    form input[type="submit"] {
+    opacity:1;
+    background-image:linear-gradient(to left,#ddd6f3,#faaca8);
+    ;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    backdrop-filter:blur(10px);
+    }
+    
+    form input[type="submit"]:hover {
+    background-color: #fff;
+    color: #333;
+    }
+    
+    footer {
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    }
+    
+    footer:hover {
+    transform: translateY(-3px);
+    }
+    a:link { text-decoration: none; }
+    a:visited { text-decoration: none; }
+    a:hover { text-decoration: none; }
+    a:active { text-decoration: none; }
+    a:focus { text-decoration: none; }
+    
+    #photo{
+    heigth:200px;
+    width:200px;
+   border-radius:200px;
+   position:relative;
+    }
+    .uparrow{
+    text-align:center;
+    width:50px;
+    height:50px;
+   bottom:20px;
+   left : 5px;
+    position:sticky;
+    z-index:9999;
+    text-decoration: none;
+    }
+    #arrow{
+    top:20px;
+    }
+    .social{
+    display:flex;
+    justify-content:space-around;
+    }
+    .overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(to bottom,#ddd6f3,#faaca8);
+    opacity:0.5;
+    object-fit:cover;
+    z-index: -1;
+    animation:rotateHue 5s alternate infinite;
+    
+    }
+    @keyframes rotateHue{
+    to{
+    filter: hue-rotate(1turn);
+    }
+    }
+    @keyframes intro {
+    from {
+    opacity: 0; /* Start with opacity 0 */
+    transform: translateY(-20px); /* Move the element up 20px */
+    }
+    to {
+    opacity: 1; /* End with opacity 1 */
+    transform: translateY(0); /* Return the element to its original position */
+    }
+    }
+    
+    </style>
+  </head>
+  <body>
+  <div class="overlay">
+  <p></p>
+  </div>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#portfolio">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="about">
+      <img src="nikhil.jpg" id="photo">
+      
+        <h1>NIKHIL KRISHNA K</h1>
+        <p>A Technologist & Enthusiastic Learner, currently learning and
+        developing in the Internet of things. Learning new technology
+        and tinkering with computers has always been my passion.<br><br>
+        <i class="fa fa-map-marker" style="font-size:24px"></i>
+        Valamangalam,Pulpatta,Malappuram,Kerala
+        </p>
+      </section>
+      <section id="portfolio">
+        <h1>Skills</h1>
+        <ul>
+          <li>
+  
+              <img src="project-1.jpg" alt="Project 1" />
+              <h2>Web designing</h2>
+          
+          </li>
+          <li>
+           
+              <img src="project-2.jpg" alt="Project 2" />
+              <h2>Web development using Django</h2>
+          
+          </li>
+          <li>
+            
+              <img src="project-3.jpg" alt="Project 3" />
+              <h2>Football Player</h2>
+         
+          </li>
+        </ul>
+      </section>
+      <section id="contact">
+        <h1>Contact</h1>
+        <form action="#">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" />
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" />
+          <label for="message">Message:</label>
+          <textarea id="message" name="message"></textarea>
+          <input type="submit" value="Send" />
+        </form>
+      </section>
+      
+    </main>
+    <div class="uparrow">
+    <a href="#" id ="arrow" >
+    <i style='font-size:40px; color:black' class='fas'>&#xf102;</i>
+    </a>
+    </div>
+    <footer>
+      <p>&copy; nikhil krishna</p>
+      
+      <div class="social">
+      <a href="https://github.com/NIKHILKRISHNAK">
+     <i style="font-size:24px;color:black;text-decoration: none;" class="fa">&#xf09b;</i>
+      </a>
+      <a href="https://www.linkedin.com/in/nikhil-krishna-k-5b8179228">
+      <i class="fa fa-linkedin-square" style="font-size:25px ;color:black;text-decoration: none;"></i>
+      </a>
+      <a href="https://instagram.com/nikhil_krishna.k">
+      <i class="fa fa-instagram" style="font-size:24px ; color:black;text-decoration: none;"></i>
+      </a>
+      <a href="https://twitter.com/NikhilK60021146?t=DdVCMhLs7T6UWnOa9RkJWQ&s=09">
+      <i class="fa fa-twitter" style="font-size:24px;color:black;text-decoration: none;"></i>
+      </a>
+      <a href="mailto:nikhilkrishnak8@gmail.com">
+      <i class="fa fa-envelope" style="font-size:24px; color:black;text-decoration: none;"></i>
+      </a>
+      </div>
+    </footer>
+    <script type="text/javascript">
+    
+    </script>
+  </body>
+</html>
