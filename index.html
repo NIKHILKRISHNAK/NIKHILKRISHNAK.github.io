@@ -179,7 +179,33 @@
     }
     #arrow{
     top:20px;
+    animation:lower 2s ;
+    animation-delay:2s;
+    opacity:0.2;
+    transform:scale(1);
+    animation-direction:reverse; 
+    
+    
     }
+    @keyframes lower{
+    from{
+    opacity:1;
+    transform:scale(1.2);
+    }
+    to{
+    opacity:0.2;
+    transform:scale(1)
+    }
+    }
+    #arrow:hover{
+    opacity:1;
+    transform:scale(1.2);
+    }
+  #arrow:not(:hover){
+  animation: lower 2s;
+  opacity:0.2;
+  }
+  
     .social{
     display:flex;
     justify-content:space-around;
