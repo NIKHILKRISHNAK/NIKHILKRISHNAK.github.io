@@ -235,8 +235,11 @@
     }
     to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0); 
     }
+    }
+    .message{
+    background-color:#f1f1f1;
     }
     
     </style>
@@ -281,15 +284,24 @@
               <h2>Web development using Django</h2>
           
           </li>
+          <li>
+            
+              <img src="Football.jpg" alt="Project 3" />
+              <h2>Football Player</h2>
+         
+          </li>
         </ul>
       </section>
       <section id="contact">
         <h1>Contact</h1>
-        <form onsubmit="Validation()">
+        <form id="myform" onsubmit="Validation()" method="POST" >
           <label for="name">Name:</label>
           <input type="text" id="name" name="name"  required>
           <label for="email">Email:</label>
           <input type="email" id="email" name="email" required>
+          <div class="message">
+          <p id="messagep"></p>
+          </div>
           <label for="message">Message:</label>
           <textarea id="message" name="message" required></textarea>
           <input type="submit" value="Send" />
@@ -326,8 +338,10 @@
     function Validation(){
     let EmailInput=document.getElementById("email").value;
     if (!isValidEmail(EmailInput)){
-    alert("Please enter a valid email ! ");
-    }
+        document.getElementById("messagep").innerHTML="Please enter a valid email !";
+        let form=document.querySelector('#myform');
+        event.preventDefault();
+        }
     function isValidEmail(email){
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
