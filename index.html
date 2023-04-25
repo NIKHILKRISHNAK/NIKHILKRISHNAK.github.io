@@ -298,7 +298,7 @@
           </div>
           <label for="message">Message:</label>
           <textarea id="message" name="message" required></textarea>
-          <input type="submit" value="Send" />
+          <input type="submit" value="Send" name="submit">
         </form>
       </section>
       
@@ -343,7 +343,7 @@
     }
     </script>
     <?php
-    if ($_POST) {
+    if ($_POST['submit']) {
     $name = trim($_POST["name"]);
     $email = trim($_POST["email"]);
     $message = trim($_POST["message"]);
