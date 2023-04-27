@@ -342,31 +342,7 @@
     }
     }
     </script>
-    <?php
-    if ($_POST['submit']) {
-    $name = trim($_POST["name"]);
-    $email = trim($_POST["email"]);
-    $message = trim($_POST["message"]);
     
-    if (empty($name) || empty($email) || empty($message)) {
-    echo "All fields are required";
-    exit();
-    }
-    
-    $to = "nikhilkrishnak8@gmail.com";
-    $subject = "New message from $name";
-    $body = "Name: $name\nEmail: $email\n\n$message";
-    $headers = "From: $email";
-    
-    if (mail($to, $subject, $body, $headers)) {
-    echo "Email sent successfully";
-    } else {
-    echo "Error sending email";
-    }
-    } else {
-    echo "Access denied";
-    }
-    ?>
     
   </body>
 </html>
