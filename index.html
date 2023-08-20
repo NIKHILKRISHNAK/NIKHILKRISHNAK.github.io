@@ -7,7 +7,8 @@
   <title>Portfolio</title>
   <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="index.css"> 
+  <link rel="stylesheet" href="index.css">
+  <script src="index.js"></script>
 </head>
 
 <body>
@@ -26,14 +27,16 @@
   <main>
     <section id="about">
       <img src="nikhil.jpg" id="photo">
-
-      <h1>NIKHIL KRISHNA K</h1>
-      <p>A Technologist & Enthusiastic Learner, currently learning and
+      <div class="name_container">
+        <h1 class="name">NIKHIL KRISHNA K</h1>
+      
+      <p class="description">A Technologist & Enthusiastic Learner, currently learning and
         developing in the Internet of things. Learning new technology
         and tinkering with computers has always been my passion.<br><br>
         <i class="fa fa-map-marker" style="font-size:24px"></i>
         Valamangalam,Pulpatta,Malappuram,Kerala
       </p>
+    </div>
     </section>
     <section id="portfolio">
       <h1>Skills</h1>
@@ -98,22 +101,6 @@
       </a>
     </div>
   </footer>
-  <script type="text/javascript">
-    function Validation() {
-      let EmailInput = document.getElementById("email").value;
-      if (!isValidEmail(EmailInput)) {
-        document.getElementById("messagep").innerHTML = "Please enter a valid email !";
-        let form = document.querySelector('#myform');
-        event.preventDefault();
-      }
-      function isValidEmail(email) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
-      }
-    }
-  </script>
-
-
 </body>
 
 </html>
