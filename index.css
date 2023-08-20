@@ -47,6 +47,29 @@ main {
     text-align: center;
 }
 
+.name_container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.name {
+    white-space: nowrap;
+    width: fit-content;
+    overflow: hidden;
+    animation: typing 2s ease-in;
+}
+
+.description {
+    max-height: 100px;
+    width: fit-content;
+    overflow: hidden;
+    transition: 1s;
+    animation: typing 1s ease-in;
+}
+
 section {
     margin-bottom: 2rem;
     transition: all 0.5s ease-in-out;
@@ -283,6 +306,16 @@ a:focus {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
     }
 }
 
